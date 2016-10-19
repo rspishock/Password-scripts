@@ -1,59 +1,59 @@
 #! /usr/bin/perl
-#  Name:				password_6.pl
-#  Author:				Ryan Spishock
-#  Email:				ryan.spishock@me.com
+#  Name:			password_6.pl
+#  Author:			Ryan Spishock
+#  Email:			ryan.spishock@me.com
 #  Date Created:		September 1, 2016
 #  Last Modified:		September 2, 2016
 #  Description: 		This script will generate
-#						passwords based on a user
-#  						defined length and level
-#						of security.
-#-------------------------------------------------------+
+#				passwords based on a user
+#  				defined length and level
+#				of security.
+#---------------------------------------------------------------+
 # Version 1.0:			Creates standard alphanumeric	|
-#						passwords with special 			|
-#						characters						|
+#				passwords with special 		|
+#				characters			|
 # Version 2.0:			Added the ability to choose 	|
-#						the level of complexity for 	|
-#			      		the password.					|
+#				the level of complexity for 	|
+#			      	the password.			|
 # Version 2.1:			Added the ability to create 	|
-#						a numeric passcode.				|
+#				a numeric passcode.		|
 # Version 3.0:			Added the ability to export 	|
-#						the generated password to an 	|
-#						external file.					|
+#				the generated password to an 	|
+#				external file.			|
 # Version 4.0.1:		Script now requires a minimum 	|
-#						length of 14 characters except 	|
-#						for passcodes.					|
+#				length of 14 characters except 	|
+#				for passcodes.			|
 # Version 4.1:			Script now warns the user if 	|
-#						an insecure password length is	|
-#						chosen.  Script only forces		|
-#						14 character restrictions on	|
-#						high security passwords.		|
-# Version 4.2:			Fixed export loop.				|
-# Version 4.2.1:		Corrected some minor 			|
-#						housekeeping issues.			|
-# Version 4.2.2:		Corrected some minor 			|
-#						housekeeping issues.  Updated	|
-#						minimum password length to 		|
-#						reflect current standards.		|
+#				an insecure password length is	|
+#				chosen.  Script only forces	|
+#				14 character restrictions on	|
+#				high security passwords.	|
+# Version 4.2:			Fixed export loop.		|
+# Version 4.2.1:		Corrected some minor 		|
+#				housekeeping issues.		|
+# Version 4.2.2:		Corrected some minor 		|
+#				housekeeping issues.  Updated	|
+#				minimum password length to 	|
+#				reflect current standards.	|
 # Version 4.3:			Added a single subroutine to	|
-#						handle password generation.		|
+#				handle password generation.	|
 # Version 5.0:			Created a function to perform	|
-#						the randomization of characters	|
-#						and generation of pass codes.	|
-#						Corrected error with single 	|
-#						case password generation that 	|
-#						generated a lower case password	|
-#						if any key other than '1' was	|
-#						selected.  Script now prompts	|
-#						user to use 16 character 		|
-#						passwords.						|
-#-------------------------------------------------------+
+#				the randomization of characters	|
+#				and generation of pass codes.	|
+#				Corrected error with single 	|
+#				case password generation that 	|
+#				generated a lower case password	|
+#				if any key other than '1' was	|
+#				selected.  Script now prompts	|
+#				user to use 16 character 	|
+#				passwords.			|
+#---------------------------------------------------------------+
 
 use diagnostics;
 use strict;
 use warnings;
 
-#---------------------------------------------------------------------------------
+#---------------------------------------------------------------+
 #sets password ranges
 my @password;
 my $password;
